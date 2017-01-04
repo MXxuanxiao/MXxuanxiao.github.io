@@ -253,6 +253,130 @@
             
               
                 
+                <a class="post-title-link" href="/2017/01/04/catTest/" itemprop="url">
+                  catTest
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-04T17:56:17+08:00" content="2017-01-04">
+              2017-01-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/test/" itemprop="url" rel="index">
+                    <span itemprop="name">test</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>分类测试<br>这个东西坑了我好几次了<br>在调用JPush设置别名和标签的方法之前，一定要在登录成功之后。<br>JPush提供了几种通知的状态<br>extern NSString <em>const kJPFNetworkIsConnectingNotification; // 正在连接中<br>extern NSString </em>const kJPFNetworkDidSetupNotification;     // 建立连接<br>extern NSString <em>const kJPFNetworkDidCloseNotification;     // 关闭连接<br>extern NSString </em>const kJPFNetworkDidRegisterNotification;  // 注册成功<br>extern NSString <em>const kJPFNetworkDidLoginNotification;     // 登录成功<br>extern NSString </em>const kJPFNetworkDidReceiveMessageNotification;         // 收到消息(非APNS)<br>extern NSString *const kJPFServiceErrorNotification;  // 错误提示</p>
+<p>通过通知中心进行监听  就可以了<br>    //JPush 监听登陆成功<br>    [[NSNotificationCenter defaultCenter] addObserver:self<br>                      selector:@selector(networkDidLogin:)<br>                          name:kJPFNetworkDidLoginNotification<br>                        object:nil];</p>
+<p>记得要删除<br>/**</p>
+<ul>
+<li>登录成功，设置别名，移除监听<br>*</li>
+<li>@param notification &lt;#notification description#&gt;<br>*/<ul>
+<li>(void)networkDidLogin:(NSNotification *)notification {<br>NSLog(@”已登录”);<br>[JPUSHService setAlias:@”123456” callbackSelector:nil object:nil];<br>[[NSNotificationCenter defaultCenter] removeObserver:self<pre><code>  name:kJPFNetworkDidLoginNotification
+object:nil];
+</code></pre>}</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/01/04/hello-world-1/" itemprop="url">
                   hello world
                 </a>
@@ -468,11 +592,18 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
           
 
           
